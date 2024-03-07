@@ -342,7 +342,7 @@ class PyCSVReader(DataSource, SerializableMixIn):
         # re-open in binary mode to circumvent a bug in Py3.5 win, where the first offset reported by tell
         # overflows int64.
         with open(filename, 'rb') as fh:
-            while fh.readline():
+            while fh.readline(5_000_000):
                 offsets[i] = fh.tell()
                 i += 1
                 if i >= len(offsets):

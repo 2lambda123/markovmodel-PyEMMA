@@ -241,15 +241,15 @@ class TestCSVReader(unittest.TestCase):
             trajinfo = reader._get_traj_info(fn)
             offset = [0]
             with open(fn, CSVReader.DEFAULT_OPEN_MODE) as fh2:
-                while fh2.readline():
+                while fh2.readline(5_000_000):
                     offset.append(fh2.tell())
                 fh2.seek(0)
                 np.testing.assert_equal(trajinfo.offsets, offset)
                 for ii, off in enumerate(trajinfo.offsets):
                     fh2.seek(off)
-                    line = fh2.readline()
+                    line = fh2.readline(5_000_000)
                     fh2.seek(offset[ii])
-                    line2 = fh2.readline()
+                    line2 = fh2.readline(5_000_000)
 
                     self.assertEqual(line, line2, "differs at offset %i (%s != %s)" % (ii, off, offset[ii]))
 
