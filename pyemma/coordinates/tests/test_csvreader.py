@@ -43,8 +43,8 @@ class TestCSVReader(unittest.TestCase):
         np.savetxt(cls.filename1, cls.data)
         np.savetxt(cls.filename2, cls.data)
     
-        cls.file_with_header = tempfile.mktemp(suffix=".dat", dir=cls.dir)
-        cls.file_with_header2 = tempfile.mktemp(suffix=".dat", dir=cls.dir)
+        cls.file_with_header = tempfile.mkstemp(suffix=".dat", dir=cls.dir)
+        cls.file_with_header2 = tempfile.mkstemp(suffix=".dat", dir=cls.dir)
     
         np.savetxt(cls.file_with_header, cls.data, header="x y z")
         np.savetxt(cls.file_with_header2, cls.data, header="x y z")

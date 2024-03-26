@@ -34,7 +34,7 @@ class TestSerializationCoordinates(unittest.TestCase):
         cls.data = np.random.random((100, 3))
 
     def setUp(self):
-        self.fn = tempfile.mktemp()
+        self.fn = tempfile.mkstemp()
 
     def tearDown(self):
         try:

@@ -300,7 +300,7 @@ class TestRandomAccessStride(TestCase):
         np.testing.assert_array_almost_equal(out[2], [self.data[2][0]])
 
     def test_csv_filereader_random_access(self):
-        tmpfiles = [tempfile.mktemp(suffix='.dat') for _ in range(0, len(self.data))]
+        tmpfiles = [tempfile.mkstemp(suffix='.dat') for _ in range(0, len(self.data))]
         try:
             for idx, tmp in enumerate(tmpfiles):
                 np.savetxt(tmp, self.data[idx])
@@ -325,7 +325,7 @@ class TestRandomAccessStride(TestCase):
                     pass
 
     def test_numpy_filereader_random_access(self):
-        tmpfiles = [tempfile.mktemp(suffix='.npy') for _ in range(0, len(self.data))]
+        tmpfiles = [tempfile.mkstemp(suffix='.npy') for _ in range(0, len(self.data))]
         try:
             for idx, tmp in enumerate(tmpfiles):
                 np.save(tmp, self.data[idx])

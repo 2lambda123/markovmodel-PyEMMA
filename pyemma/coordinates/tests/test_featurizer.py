@@ -138,7 +138,7 @@ class TestFeaturizer(unittest.TestCase):
         with open(cls.asn_leu_pdbfile, 'w') as fh:
             fh.write(asn_leu_pdb)
 
-        cls.asn_leu_traj = tempfile.mktemp(suffix='.xtc')
+        cls.asn_leu_traj = tempfile.mkstemp(suffix='.xtc')
 
         cls.bogus_geom_pdbfile = tempfile.mkstemp(suffix=".pdb")[1]
         with open(cls.bogus_geom_pdbfile, 'w') as fh:
@@ -1228,7 +1228,7 @@ class TestCustomFeature(unittest.TestCase):
 
     def test_serializable(self):
         import tempfile
-        f = tempfile.mktemp()
+        f = tempfile.mkstemp()
         try:
             self.feat.add_custom_func(some_call_to_mdtraj_some_operations_some_linalg, self.U.shape[1],
                                       self.pairs,

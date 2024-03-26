@@ -84,7 +84,7 @@ def patch_old_location(faked_old_class, new_class):
 class TestSerialisation(unittest.TestCase):
 
     def setUp(self):
-        self.fn = tempfile.mktemp()
+        self.fn = tempfile.mkstemp()
 
     def tearDown(self):
         try:

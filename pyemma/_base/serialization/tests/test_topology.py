@@ -28,7 +28,7 @@ class TestTopology(unittest.TestCase):
     maxDiff = None
 
     def setUp(self):
-        self.f = tempfile.mktemp('.h5')
+        self.f = tempfile.mkstemp('.h5')
 
     def tearDown(self):
         os.unlink(self.f)

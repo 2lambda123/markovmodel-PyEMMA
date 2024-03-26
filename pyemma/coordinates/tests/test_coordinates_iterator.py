@@ -205,7 +205,7 @@ class TestCoordinatesIterator(unittest.TestCase):
         data = [np.random.random((np.random.randint(50, 150), dim)) for _ in range(4)]
         tica = tica(data, lag=1)
         import tempfile
-        out = tempfile.mktemp()
+        out = tempfile.mkstemp()
         group = '/test'
 
         def perform(chunksize, stride):

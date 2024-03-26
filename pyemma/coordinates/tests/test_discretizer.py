@@ -40,7 +40,7 @@ from pyemma.coordinates.api import cluster_kmeans, pca, source
 
 
 def create_water_topology_on_disc(n):
-    topfile = tempfile.mktemp('.pdb')
+    topfile = tempfile.mkstemp('.pdb')
     top = Topology()
     chain = top.add_chain()
 
@@ -58,7 +58,7 @@ def create_water_topology_on_disc(n):
 
 
 def create_traj_on_disc(topfile, n_frames, n_atoms):
-    fn = tempfile.mktemp('.xtc')
+    fn = tempfile.mkstemp('.xtc')
     xyz = np.random.random((n_frames, n_atoms, 3))
     t = mdtraj.load(topfile)
     t.xyz = xyz

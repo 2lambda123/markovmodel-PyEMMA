@@ -337,7 +337,7 @@ class TestAMMDoubleWell(_tmsm):
     def test_serialize(self):
         import tempfile
         import pyemma
-        f = tempfile.mktemp()
+        f = tempfile.mkstemp()
         try:
             self.amm.save(f)
             restored = pyemma.load(f)
@@ -604,7 +604,7 @@ class TestCoreAMMDoubleWell(_ctmsm):
     def test_serialize(self):
         import tempfile
         import pyemma
-        f = tempfile.mktemp()
+        f = tempfile.mkstemp()
         try:
             self.amm.save(f)
             restored = pyemma.load(f)
