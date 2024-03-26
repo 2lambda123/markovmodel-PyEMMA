@@ -47,10 +47,10 @@ class TestNumPyFileReader(unittest.TestCase):
 
         cls.dir = tempfile.mkdtemp(prefix='pyemma_npyreader')
 
-        cls.f1 = tempfile.mktemp(suffix='.npy', dir=cls.dir)
-        cls.f2 = tempfile.mktemp(suffix='.npy', dir=cls.dir)
-        cls.f3 = tempfile.mktemp(suffix='.npz', dir=cls.dir)
-        cls.f4 = tempfile.mktemp(suffix='.npy', dir=cls.dir)
+        cls.f1 = tempfile.mkstemp(suffix='.npy', dir=cls.dir)
+        cls.f2 = tempfile.mkstemp(suffix='.npy', dir=cls.dir)
+        cls.f3 = tempfile.mkstemp(suffix='.npz', dir=cls.dir)
+        cls.f4 = tempfile.mkstemp(suffix='.npy', dir=cls.dir)
 
 
         # 2d

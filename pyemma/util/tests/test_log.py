@@ -68,7 +68,7 @@ loggers:
     def test_set_new_log_conf(self):
         import logging, copy, tempfile
         old_handlers = copy.copy(logging.getLogger('pyemma').handlers)
-        log_file = tempfile.mktemp()
+        log_file = tempfile.mkstemp()
         file_handler = {'my_filehandler': {'class': 'logging.FileHandler', 'filename': log_file}, }
         new_conf = {'handlers': file_handler}
 

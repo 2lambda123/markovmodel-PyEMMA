@@ -49,7 +49,7 @@ class TestMSMSerialization(unittest.TestCase):
         cls.oom = pyemma.msm.estimate_markov_model(cls.obs_macro, cls.lag, weights='oom')
 
     def setUp(self):
-        self.f = tempfile.mktemp()
+        self.f = tempfile.mkstemp()
 
     def tearDown(self):
         try:

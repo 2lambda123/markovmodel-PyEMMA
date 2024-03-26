@@ -75,7 +75,7 @@ def check_serialization(estimator):
     import tempfile
 
     assert isinstance(estimator, SerializableMixIn)
-    f = tempfile.mktemp()
+    f = tempfile.mkstemp()
     estimator.save(f)
     restored = pyemma.load(f)
 

@@ -37,7 +37,7 @@ def model_file():
         t = tica(s, lag=1)
 
         c = cluster_kmeans(t)
-        file = tempfile.mktemp()
+        file = tempfile.mkstemp()
         c.save(file, save_streaming_chain=True)
 
         yield file

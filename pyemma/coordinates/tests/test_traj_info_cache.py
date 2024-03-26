@@ -59,7 +59,7 @@ class TestTrajectoryInfoCache(unittest.TestCase):
 
     def setUp(self):
         self.work_dir = tempfile.mkdtemp(prefix="traj_cache_test")
-        self.tmpfile = tempfile.mktemp(dir=self.work_dir)
+        self.tmpfile = tempfile.mkstemp(dir=self.work_dir)
         self.db = TrajectoryInfoCache(self.tmpfile)
 
         # overwrite TrajectoryInfoCache._instance with self.db...
@@ -166,7 +166,7 @@ class TestTrajectoryInfoCache(unittest.TestCase):
 
     def test_csvreader(self):
         data = np.random.random((101, 3))
-        fn = tempfile.mktemp()
+        fn = tempfile.mkstemp()
         try:
             np.savetxt(fn, data)
             # calc offsets

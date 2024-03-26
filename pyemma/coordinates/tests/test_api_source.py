@@ -44,12 +44,12 @@ class TestApiSourceFileReader(unittest.TestCase):
 
         cls.dir = tempfile.mkdtemp("test-api-src")
 
-        cls.npy = tempfile.mktemp(suffix='.npy', dir=cls.dir)
-        cls.npz = tempfile.mktemp(suffix='.npz', dir=cls.dir)
-        cls.dat = tempfile.mktemp(suffix='.dat', dir=cls.dir)
-        cls.csv = tempfile.mktemp(suffix='.csv', dir=cls.dir)
+        cls.npy = tempfile.mkstemp(suffix='.npy', dir=cls.dir)
+        cls.npz = tempfile.mkstemp(suffix='.npz', dir=cls.dir)
+        cls.dat = tempfile.mkstemp(suffix='.dat', dir=cls.dir)
+        cls.csv = tempfile.mkstemp(suffix='.csv', dir=cls.dir)
 
-        cls.bs = tempfile.mktemp(suffix=".bs", dir=cls.dir)
+        cls.bs = tempfile.mkstemp(suffix=".bs", dir=cls.dir)
 
         with open(cls.bs, "w") as fh:
             fh.write("meaningless\n")

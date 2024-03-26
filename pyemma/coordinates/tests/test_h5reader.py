@@ -14,7 +14,7 @@ class TestH5Reader(unittest.TestCase):
         # create test data sets
         cls.directory = tempfile.mkdtemp('test_h5reader')
 
-        cls.f1 = tempfile.mktemp(suffix='.h5', dir=cls.directory)
+        cls.f1 = tempfile.mkstemp(suffix='.h5', dir=cls.directory)
         cls.shape = (10, 3)
         cls.data = np.arange(cls.shape[0]*cls.shape[1]).reshape(cls.shape)
         with h5py.File(cls.f1, mode='w') as f:

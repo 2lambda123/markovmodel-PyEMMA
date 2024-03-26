@@ -35,7 +35,7 @@ class TestStride(unittest.TestCase):
         N_trajs = 10  # number of trajectories
 
         # create topology file
-        cls.temppdb = tempfile.mktemp('.pdb')
+        cls.temppdb = tempfile.mkstemp('.pdb')
         with open(cls.temppdb, 'w') as f:
             for i in range(cls.dim//3):
                 print(('ATOM  %5d C    ACE A   1      28.490  31.600  33.379  0.00  1.00' % i), file=f)
@@ -52,7 +52,7 @@ class TestStride(unittest.TestCase):
             traj = mdtraj.load(cls.temppdb)
             traj.xyz = xyz
             traj.time = t
-            tempfname = tempfile.mktemp('.xtc')
+            tempfname = tempfile.mkstemp('.xtc')
             traj.save(tempfname)
             cls.trajnames.append(tempfname)
 

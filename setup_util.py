@@ -118,7 +118,7 @@ def has_flag(compiler, flagname):
     with TemporaryDirectory() as tmpdir, \
             stdchannel_redirected(sys.stderr, os.devnull), \
             stdchannel_redirected(sys.stdout, os.devnull):
-        f = tempfile.mktemp(suffix='.cpp', dir=tmpdir)
+        f = tempfile.mkstemp(suffix='.cpp', dir=tmpdir)
         with open(f, 'w') as fh:
             fh.write('int main (int argc, char **argv) { return 0; }')
         try:

@@ -71,7 +71,7 @@ class TestThermoMSM(unittest.TestCase):
     def test_serialization(self):
         ''' check if the test still hold for a restored model. '''
         import tempfile
-        f = tempfile.mktemp()
+        f = tempfile.mkstemp()
         try:
             self.msm.save(f)
             from pyemma import load
